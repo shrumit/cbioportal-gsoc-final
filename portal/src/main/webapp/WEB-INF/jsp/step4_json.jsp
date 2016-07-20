@@ -66,8 +66,7 @@
         });
     </script>
 
-<textarea rows='5' cols='80' id='gene_list' placeholder="Enter HUGO Gene Symbols or Gene Aliases" required
-name='<%= QueryBuilder.GENE_LIST %>' title='Enter HUGO Gene Symbols or Gene Aliases'><%
+<div contenteditable='true' style='height: 5rem; width: 80rem;' id='gene_list' placeholder="Enter HUGO Gene Symbols or Gene Aliases" title='Enter HUGO Gene Symbols or Gene Aliases'><%
     if (localGeneList != null && localGeneList.length() > 0) {
 	    String geneListWithSemis =
 			    org.mskcc.cbio.portal.oncoPrintSpecLanguage.Utilities.appendSemis(localGeneList);
@@ -77,7 +76,7 @@ name='<%= QueryBuilder.GENE_LIST %>' title='Enter HUGO Gene Symbols or Gene Alia
 	    geneListWithSemis = geneListWithSemis.replaceAll("\\\\n", "\n").replaceAll("\\\\/", "/");
         out.print(geneListWithSemis);
     }
-%></textarea>
+%></div>
 
 <p id="genestatus"></p>
 
