@@ -68,6 +68,8 @@
 <script type="text/javascript" src="js/lib/handlebars.min.js"></script>
 <script type="text/javascript" src="js/lib/rangy-core.js"></script>
 <script type="text/javascript" src="js/lib/rangy-selectionsaverestore.js"></script>
+<script type="text/javascript" src="js/lib/jquery.caret.js?<%=GlobalProperties.getAppVersion()%>"></script>
+
 <script src="https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js" type="text/javascript"></script>
 
 
