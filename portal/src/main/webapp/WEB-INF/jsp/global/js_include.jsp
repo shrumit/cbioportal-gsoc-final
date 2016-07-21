@@ -65,6 +65,9 @@
 <script type="text/javascript" src="js/lib/plotly.min.js?<%=GlobalProperties.getAppVersion()%>"></script>
 <script type="text/javascript" src="js/lib/igv_webstart.js?<%=GlobalProperties.getAppVersion()%>"></script>
 <script type="text/javascript" src="js/lib/genomespace.js"></script>
+<script type="text/javascript" src="js/lib/rangy-core.js"></script>
+<script type="text/javascript" src="js/lib/rangy-selectionsaverestore.js"></script>
+
 <script src="https://gsui.genomespace.org/jsui/upload/gsuploadwindow.js" type="text/javascript"></script>
 
 
