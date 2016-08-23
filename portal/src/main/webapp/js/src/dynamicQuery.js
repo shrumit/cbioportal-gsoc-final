@@ -163,7 +163,7 @@ function loadGeneList(geneSetId) {
 
     $.getJSON("portal_meta_data.json?geneset_id="+geneSetId.replace(/\//g,""), function(json){
         window.metaDataJson.gene_sets[geneSetId].gene_list = json.list;
-        $("#gene_list").val(json.list);
+        $("#gene_list").html(json.list);
         $('.main_query_panel').stop().fadeTo("fast",1);
     });
 }
@@ -781,16 +781,17 @@ function caseSetSelected() {
 function geneSetSelected() {
     //  Get the selected ID from the pull-down menu
     var geneSetId = $("#select_gene_set").val();
-
-    if (window.metaDataJson.gene_sets[geneSetId].gene_list == "") {
+	console.log('geneSetSelected');
+	
+	//  Get the gene set meta data from global JSON variable
+	var gene_set = window.metaDataJson.gene_sets[geneSetId];
+    if (!gene_set.gene_list) {
         loadGeneList(geneSetId);
     } else {
-        //  Get the gene set meta data from global JSON variable
-        var gene_set = window.metaDataJson.gene_sets[geneSetId];
-
         //  Set the gene list text area
-        $("#gene_list").val(gene_set.gene_list);
+        $("#gene_list").html(gene_set.gene_list);
     }
+	$('#gene_list').keyup(); // trigger gene validation
 }
 
 //  Adds Meta Data to the Page.
